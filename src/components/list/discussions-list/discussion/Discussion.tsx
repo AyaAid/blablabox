@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import "./Discussion.css";
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './Discussion.css'
 
 interface DiscussionUserProps {
   name: string;
@@ -25,4 +25,4 @@ const Discussion: React.FC<DiscussionUserProps> = ({ name }) => {
   );
 };
 
-export default Discussion;
+export default Discussion

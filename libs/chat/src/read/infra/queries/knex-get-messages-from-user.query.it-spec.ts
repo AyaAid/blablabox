@@ -1,9 +1,9 @@
-import knex, { Knex } from 'knex'
-import { KnexGetMessagesFromUserQuery } from './knex-get-message-from-user.query'
-import { knexConfig } from '@app/shared'
-import { resetDB } from 'test/docker-manager'
 import { MessagePm } from '@app/chat/write'
+import { knexConfig } from '@app/shared'
+import knex, { Knex } from 'knex'
+import { resetDB } from 'test/docker-manager'
 import { Message } from '../../domain'
+import { KnexGetMessagesFromUserQuery } from './knex-get-message-from-user.query'
 
 const USER_ID_1 = 'ab3b7dd6-6825-4503-a3d1-c1e4a6c50731'
 const USER_ID_2 = '1d902bc3-3e6a-40ba-bf9a-0103a6eb031d'

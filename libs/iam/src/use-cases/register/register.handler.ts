@@ -1,6 +1,3 @@
-import { CommandHandler } from '@app/shared'
-import { RegisterCommand, RegisterPayload } from './register.command'
-import { AuthProvider, UserRepository } from '@app/iam/gateways'
 import {
     DateProvider,
     IdProvider,
@@ -8,6 +5,9 @@ import {
     User,
     UsernameAlreadyExistsError,
 } from '@app/iam/domain'
+import { AuthProvider, UserRepository } from '@app/iam/gateways'
+import { CommandHandler } from '@app/shared'
+import { RegisterCommand, RegisterPayload } from './register.command'
 
 export class RegisterHandler implements CommandHandler<RegisterCommand> {
     constructor(

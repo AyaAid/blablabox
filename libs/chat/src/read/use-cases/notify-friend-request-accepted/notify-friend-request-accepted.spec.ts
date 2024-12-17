@@ -1,5 +1,5 @@
 import { FriendRequestAcceptedEvent } from '@app/chat/write/domain'
-import { createFixture, Fixture } from '../../__tests__'
+import { Fixture, createFixture } from '../../__tests__'
 
 describe('Feature: Notify friend request accepted', () => {
     let fixture: Fixture

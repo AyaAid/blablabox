@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./SendBar.css";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './SendBar.css'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
 
 const SendBar = () => {
-  const [nbOfCaract, SetNbOfCaract] = useState("0");
-  const maxLength = 500;
+    const [nbOfCaract, SetNbOfCaract] = useState('0')
+    const maxLength = 500
 
-  const handleChange = (value: string) => {
-    SetNbOfCaract(value);
-  };
+    const handleChange = (value: string) => {
+        SetNbOfCaract(value)
+    }
 
   return (
     <div className="sendBar">
@@ -30,4 +30,4 @@ const SendBar = () => {
   );
 };
 
-export default SendBar;
+export default SendBar

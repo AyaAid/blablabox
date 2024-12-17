@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
-import knexConfig from './knexfile'
 import knex from 'knex'
+import knexConfig from './knexfile'
 
 export const SqlConnection = Symbol('SqlConnection')
 

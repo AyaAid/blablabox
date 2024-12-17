@@ -1,16 +1,16 @@
 .button {
-  background-color: var(--third-color);
-  padding: 4px 20px;
-  gap: 25px;
-  display: flex;
-  border-radius: 20px;
+    background-color: var(--third-color);
+    padding: 4px 20px;
+    gap: 25px;
+    display: flex;
+    border-radius: 20px;
 }
 
 .button p {
-  margin: auto;
+    margin: auto;
 }
 
 .button-icon {
-  color: white;
-  margin: auto;
+    color: white;
+    margin: auto;
 }

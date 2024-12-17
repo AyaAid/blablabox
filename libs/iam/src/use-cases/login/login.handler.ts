@@ -1,11 +1,11 @@
-import { CommandHandler } from '@app/shared'
-import { LoginCommand, LoginPayload } from './login.command'
-import { AuthProvider, UserRepository } from '@app/iam/gateways'
 import {
     PasswordHasher,
     UserNotFoundError,
     UserPasswordDoesNotMatchError,
 } from '@app/iam/domain'
+import { AuthProvider, UserRepository } from '@app/iam/gateways'
+import { CommandHandler } from '@app/shared'
+import { LoginCommand, LoginPayload } from './login.command'
 
 export class LoginHandler implements CommandHandler<LoginCommand> {
     constructor(

@@ -1,6 +1,6 @@
+import { MessagePm } from '@app/chat/write'
 import { Knex } from 'knex'
 import { GetChatsQuery } from '../../queries'
-import { MessagePm } from '@app/chat/write'
 
 export class KnexGetChatsQuery implements GetChatsQuery {
     constructor(private knex: Knex) {}

@@ -1,27 +1,27 @@
 import {
-    DeleteDirectMessageHandler,
-    SendDirectMessageHandler,
-} from '@app/chat/write/use-cases'
-import {
-    Body,
-    Controller,
-    Delete,
-    NotFoundException,
-    BadRequestException,
-    Param,
-    Post,
-} from '@nestjs/common'
-import { DeleteMessageParams, SendMessageParams } from '../params'
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
-import { SendDirectMessageBody } from '../body'
-import { AuthUser, User } from '@app/iam'
-import {
     ChatterNotFoundError,
     ChatterNotFriendWithReceiverError,
     MessageAlreadyDeletedError,
     MessageNotFoundError,
     MessageWasNotSentByChatterError,
 } from '@app/chat/write/domain'
+import {
+    DeleteDirectMessageHandler,
+    SendDirectMessageHandler,
+} from '@app/chat/write/use-cases'
+import { AuthUser, User } from '@app/iam'
+import {
+    BadRequestException,
+    Body,
+    Controller,
+    Delete,
+    NotFoundException,
+    Param,
+    Post,
+} from '@nestjs/common'
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
+import { SendDirectMessageBody } from '../body'
+import { DeleteMessageParams, SendMessageParams } from '../params'
 
 @ApiTags('Chat')
 @Controller('chat')

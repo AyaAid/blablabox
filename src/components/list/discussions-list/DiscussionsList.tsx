@@ -30,4 +30,4 @@ const DiscussionList: React.FC<DiscussionListProps> = ({ search }) => {
   );
 };
 
-export default DiscussionList;
+export default DiscussionList

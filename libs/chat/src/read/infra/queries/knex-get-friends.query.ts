@@ -1,7 +1,7 @@
-import { Knex } from 'knex'
-import { GetFriendsQuery } from '../../queries'
-import { Friend } from '../../domain/friend'
 import { FriendshipPm } from '@app/chat/write'
+import { Knex } from 'knex'
+import { Friend } from '../../domain/friend'
+import { GetFriendsQuery } from '../../queries'
 
 export class KnexGetFriendsQuery implements GetFriendsQuery {
     constructor(private knex: Knex) {}
@@ -37,4 +37,3 @@ export class KnexGetFriendsQuery implements GetFriendsQuery {
         })
     }
 }
-

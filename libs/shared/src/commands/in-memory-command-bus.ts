@@ -1,10 +1,12 @@
 import { Command } from './command'
-import { CommandHandler } from './command-handler'
 import { CommandBus } from './command-bus'
+import { CommandHandler } from './command-handler'
 
 export class InMemoryCommandBus implements CommandBus {
     private handlers = new Map<
-        new (payload: any) => unknown,
+        new (
+            payload: any
+        ) => unknown,
         CommandHandler<Command<unknown>>
     >()
 
@@ -24,7 +26,9 @@ export class InMemoryCommandBus implements CommandBus {
 
     async execute<P>(command: Command<P>) {
         const handler = this.handlers.get(
-            command.constructor as new (payload: P) => Command<P>
+            command.constructor as new (
+                payload: P
+            ) => Command<P>
         )
         if (!handler) {
             throw new Error(`No handler registered for command: ${command}`)

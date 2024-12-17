@@ -1,45 +1,45 @@
 .notification-bar {
-  height: 60px;
-  left: 0px;
-  right: 0px;
-  display: flex;
-  justify-content: end;
-  padding: 15px;
-  z-index: 100;
-  position: absolute;
+    height: 60px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+    z-index: 100;
+    position: absolute;
 }
 
 .notification {
-  height: 35px;
-  width: 35px;
-  background-color: white;
-  border-radius: 100%;
-  margin: auto 0;
-  display: flex;
-  position: relative;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    border-radius: 100%;
+    margin: auto 0;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px
+        0px 0px 1px;
 }
 .notification-nb {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  right: 0px;
-  top: 0px;
-  transform: translate(25%, -25%);
-  border-radius: 100%;
-  background-color: red;
-  display: flex;
-  align-items: center;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 0px;
+    top: 0px;
+    transform: translate(25%, -25%);
+    border-radius: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
 }
 
 .notification-nb p {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .notification-icon {
-  color: var(--third-color);
-  margin: auto;
-  height: 75%;
+    color: var(--third-color);
+    margin: auto;
+    height: 75%;
 }

@@ -1,12 +1,12 @@
-import { knexConfig } from '@app/shared'
-import knex, { Knex } from 'knex'
-import { resetDB } from 'test/docker-manager'
-import { KnexUserSocialRepository } from './knex-user-social.repository'
 import {
     friendRequestBuilder,
     friendshipBuilder,
     userSocialBuilder,
 } from '@app/chat/write/__tests__'
+import { knexConfig } from '@app/shared'
+import knex, { Knex } from 'knex'
+import { resetDB } from 'test/docker-manager'
+import { KnexUserSocialRepository } from './knex-user-social.repository'
 import { FriendshipPm, UserPm } from './persistence-models'
 import { FriendRequestPm } from './persistence-models/friend-request.pm'
 

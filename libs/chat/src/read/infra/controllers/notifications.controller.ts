@@ -1,21 +1,21 @@
+import {
+    FriendRequestAcceptedEvent,
+    FriendRequestSentEvent,
+} from '@app/chat/write/domain'
 import { MessageSentEvent } from '@app/chat/write/domain/message/message.events'
-import { Controller, Sse, MessageEvent, Res } from '@nestjs/common'
+import { AuthUser, User } from '@app/iam'
+import { Controller, MessageEvent, Res, Sse } from '@nestjs/common'
 import { EventEmitter2 } from '@nestjs/event-emitter'
+import { ApiTags } from '@nestjs/swagger'
+import { Response } from 'express'
 import { Subject } from 'rxjs'
 import {
     NotifyFriendRequestAcceptedHandler,
     NotifyFriendRequestReceivedHandler,
     NotifyMessageSent,
 } from '../../use-cases'
-import { AuthUser, User } from '@app/iam'
-import { Response } from 'express'
-import { SSEMessageNotifier } from '../message-notifiers'
-import {
-    FriendRequestAcceptedEvent,
-    FriendRequestSentEvent,
-} from '@app/chat/write/domain'
 import { SSEFriendRequestNotifier } from '../friend-request-notifiers/sse-friend-request-notifier'
-import { ApiTags } from '@nestjs/swagger'
+import { SSEMessageNotifier } from '../message-notifiers'
 
 @Controller('notifications')
 @ApiTags('Notifications')

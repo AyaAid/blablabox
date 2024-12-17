@@ -1,9 +1,9 @@
-import knex, { Knex } from 'knex'
+import { FriendshipPm, UserPm } from '@app/chat/write'
+import { Friendship } from '@app/chat/write/domain'
 import { knexConfig } from '@app/shared'
+import knex, { Knex } from 'knex'
 import { resetDB } from 'test/docker-manager'
 import { KnexGetFriendsQuery } from './knex-get-friends.query'
-import { Friendship } from '@app/chat/write/domain'
-import { FriendshipPm, UserPm } from '@app/chat/write'
 
 const USER_ID = 'c8062fd1-b4b7-49fa-b9a3-c9c9acbf02b2'
 const USER_ID_2 = '1d902bc3-3e6a-40ba-bf9a-0103a6eb031d'

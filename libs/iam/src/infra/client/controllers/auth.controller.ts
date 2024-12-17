@@ -1,4 +1,16 @@
 import {
+    UserNotFoundError,
+    UserPasswordDoesNotMatchError,
+    UsernameAlreadyExistsError,
+} from '@app/iam/domain'
+import { AuthUser } from '@app/iam/gateways'
+import { GetMeQuery } from '@app/iam/queries'
+import {
+    LoginHandler,
+    LogoutHandler,
+    RegisterHandler,
+} from '@app/iam/use-cases'
+import {
     Body,
     ConflictException,
     Controller,
@@ -9,22 +21,10 @@ import {
     Res,
 } from '@nestjs/common'
 import { ApiTags } from '@nestjs/swagger'
-import { LoginBody, RegisterBody } from '../body'
-import {
-    LoginHandler,
-    LogoutHandler,
-    RegisterHandler,
-} from '@app/iam/use-cases'
-import { Public } from '../metadata'
 import { Response } from 'express'
-import { GetMeQuery } from '@app/iam/queries'
-import { AuthUser } from '@app/iam/gateways'
+import { LoginBody, RegisterBody } from '../body'
 import { User } from '../decorators'
-import {
-    UsernameAlreadyExistsError,
-    UserNotFoundError,
-    UserPasswordDoesNotMatchError,
-} from '@app/iam/domain'
+import { Public } from '../metadata'
 
 @ApiTags('Auth')
 @Controller('auth')

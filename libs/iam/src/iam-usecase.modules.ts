@@ -1,12 +1,12 @@
-import { Module } from '@nestjs/common'
-import { IAMDependenciesModule } from './iam-dependencies.module'
-import { LoginHandler, LogoutHandler, RegisterHandler } from './use-cases'
 import { CommandBus, DatabaseModule, SqlConnection } from '@app/shared'
-import { AuthProvider, UserRepository } from './gateways'
-import { DateProvider, IdProvider, PasswordHasher } from './domain'
+import { Module } from '@nestjs/common'
 import { Knex } from 'knex'
+import { DateProvider, IdProvider, PasswordHasher } from './domain'
+import { AuthProvider, UserRepository } from './gateways'
+import { IAMDependenciesModule } from './iam-dependencies.module'
 import { knexGetMeQuery } from './infra'
 import { GetMeQuery } from './queries'
+import { LoginHandler, LogoutHandler, RegisterHandler } from './use-cases'
 
 @Module({
     imports: [IAMDependenciesModule, DatabaseModule],

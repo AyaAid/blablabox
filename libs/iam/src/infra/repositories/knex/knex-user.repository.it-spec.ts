@@ -1,9 +1,9 @@
-import knex, { Knex } from 'knex'
-import { KnexUserRepository } from './knex-user.repository'
-import { knexConfig } from '@app/shared'
-import { resetDB } from 'test/docker-manager'
 import { userBuilder } from '@app/iam/__tests__'
 import { User } from '@app/iam/domain'
+import { knexConfig } from '@app/shared'
+import knex, { Knex } from 'knex'
+import { resetDB } from 'test/docker-manager'
+import { KnexUserRepository } from './knex-user.repository'
 
 describe('KnexUserRepository', () => {
     let sqlConnection: Knex

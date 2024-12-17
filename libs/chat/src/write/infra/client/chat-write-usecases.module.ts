@@ -1,18 +1,18 @@
+import { EventBus } from '@app/shared'
 import { Module } from '@nestjs/common'
-import {
-    AcceptFriendRequestHandler,
-    SendDirectMessageHandler,
-    SendFriendRequestHandler,
-} from '../../use-cases'
+import { DateProvider } from '../../domain'
 import {
     ChatterRepository,
     MessageRepository,
     UserSocialRepository,
 } from '../../gateways'
-import { DateProvider } from '../../domain'
-import { ChatWriteDependenciesModule } from './chat-write-dependencies.module'
+import {
+    AcceptFriendRequestHandler,
+    SendDirectMessageHandler,
+    SendFriendRequestHandler,
+} from '../../use-cases'
 import { DeleteDirectMessageHandler } from '../../use-cases/delete-direct-message/delete-direct-message.handler'
-import { EventBus } from '@app/shared'
+import { ChatWriteDependenciesModule } from './chat-write-dependencies.module'
 
 @Module({
     imports: [ChatWriteDependenciesModule],

@@ -1,4 +1,4 @@
-import { createFixture, Fixture, userBuilder } from '@app/iam/__tests__'
+import { Fixture, createFixture, userBuilder } from '@app/iam/__tests__'
 import { UsernameAlreadyExistsError } from '@app/iam/domain'
 
 describe('Feature: Register new user', () => {
