@@ -1,9 +1,9 @@
 import {
+    UserSocialFixture,
     createUserSocialFixture,
     friendRequestBuilder,
     friendshipBuilder,
     userSocialBuilder,
-    UserSocialFixture,
 } from '../../__tests__'
 import {
     FriendRequestAcceptedEvent,

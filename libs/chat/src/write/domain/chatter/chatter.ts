@@ -1,8 +1,8 @@
 import { Aggregate } from '@app/shared'
 import { FriendRequest } from '../friend-request'
 import { Message } from '../message'
-import { ChatterNotFriendWithReceiverError } from './chatter.errors'
 import { MessageSentEvent } from '../message/message.events'
+import { ChatterNotFriendWithReceiverError } from './chatter.errors'
 
 type ChatterProps = {
     id: string

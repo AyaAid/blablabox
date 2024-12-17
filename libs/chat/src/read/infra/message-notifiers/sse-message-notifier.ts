@@ -1,7 +1,7 @@
-import { Subject } from 'rxjs'
 import { MessageEvent } from '@nestjs/common'
-import { MessageNotifier } from '../../gateways'
+import { Subject } from 'rxjs'
 import { Message } from '../../domain'
+import { MessageNotifier } from '../../gateways'
 
 export class SSEMessageNotifier implements MessageNotifier {
     constructor(private subject: Subject<MessageEvent>) {}

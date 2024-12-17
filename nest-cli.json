@@ -1,38 +1,38 @@
 {
-  "$schema": "https://json.schemastore.org/nest-cli",
-  "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
-  "compilerOptions": {
-    "deleteOutDir": true,
-    "webpack": true
-  },
-  "projects": {
-    "shared": {
-      "type": "library",
-      "root": "libs/shared",
-      "entryFile": "index",
-      "sourceRoot": "libs/shared/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/shared/tsconfig.lib.json"
-      }
+    "$schema": "https://json.schemastore.org/nest-cli",
+    "collection": "@nestjs/schematics",
+    "sourceRoot": "src",
+    "compilerOptions": {
+        "deleteOutDir": true,
+        "webpack": true
     },
-    "iam": {
-      "type": "library",
-      "root": "libs/iam",
-      "entryFile": "index",
-      "sourceRoot": "libs/iam/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/iam/tsconfig.lib.json"
-      }
-    },
-    "chat": {
-      "type": "library",
-      "root": "libs/chat",
-      "entryFile": "index",
-      "sourceRoot": "libs/chat/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/chat/tsconfig.lib.json"
-      }
+    "projects": {
+        "shared": {
+            "type": "library",
+            "root": "libs/shared",
+            "entryFile": "index",
+            "sourceRoot": "libs/shared/src",
+            "compilerOptions": {
+                "tsConfigPath": "libs/shared/tsconfig.lib.json"
+            }
+        },
+        "iam": {
+            "type": "library",
+            "root": "libs/iam",
+            "entryFile": "index",
+            "sourceRoot": "libs/iam/src",
+            "compilerOptions": {
+                "tsConfigPath": "libs/iam/tsconfig.lib.json"
+            }
+        },
+        "chat": {
+            "type": "library",
+            "root": "libs/chat",
+            "entryFile": "index",
+            "sourceRoot": "libs/chat/src",
+            "compilerOptions": {
+                "tsConfigPath": "libs/chat/tsconfig.lib.json"
+            }
+        }
     }
-  }
 }

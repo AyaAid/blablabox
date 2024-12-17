@@ -1,10 +1,10 @@
 import { CommandHandler, EventBus } from '@app/shared'
+import { DateProvider, UserSocialNotFoundError } from '../../domain'
+import { UserSocialRepository } from '../../gateways'
 import {
     AcceptFriendRequestCommand,
     AcceptFriendRequestPayload,
 } from './accept-friend-request.command'
-import { UserSocialRepository } from '../../gateways'
-import { DateProvider, UserSocialNotFoundError } from '../../domain'
 
 export class AcceptFriendRequestHandler
     implements CommandHandler<AcceptFriendRequestCommand>

@@ -1,7 +1,7 @@
 import { FriendRequestSentEvent } from '@app/chat/write/domain'
+import { Fixture, createFixture } from '../../__tests__'
 import { StubFriendRequestNotifier } from '../../infra'
 import { NotifyFriendRequestReceivedHandler } from './notify-friend-request-received.handler'
-import { createFixture, Fixture } from '../../__tests__'
 
 describe('Feature: Notify Friend Request Received', () => {
     let fixture: Fixture

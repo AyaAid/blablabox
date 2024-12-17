@@ -1,16 +1,16 @@
+import { StubEventBus } from '@app/shared'
 import { Chatter, DeterministicDateProvider, Message } from '../../domain'
+import { MessageSentEvent } from '../../domain/message/message.events'
+import {
+    InMemoryChatterRepository,
+    InMemoryMessageRepository,
+} from '../../infra'
 import {
     DeleteDirectMessageHandler,
     DeleteDirectMessagePayload,
     SendDirectMessageHandler,
     SendDirectMessagePayload,
 } from '../../use-cases'
-import {
-    InMemoryChatterRepository,
-    InMemoryMessageRepository,
-} from '../../infra'
-import { MessageSentEvent } from '../../domain/message/message.events'
-import { StubEventBus } from '@app/shared'
 
 export const createChatFixture = () => {
     const messageRepository = new InMemoryMessageRepository()

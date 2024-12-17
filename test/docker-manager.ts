@@ -1,9 +1,9 @@
+import * as path from 'path'
+import knex, { Knex } from 'knex'
 import {
     DockerComposeEnvironment,
     StartedDockerComposeEnvironment,
 } from 'testcontainers'
-import * as path from 'path'
-import knex, { Knex } from 'knex'
 import { knexConfig } from '../libs/shared/src'
 
 const composeFilePath = path.resolve(process.cwd(), 'test')

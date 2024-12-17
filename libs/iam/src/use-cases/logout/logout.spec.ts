@@ -1,4 +1,4 @@
-import { createFixture, Fixture, userBuilder } from '@app/iam/__tests__'
+import { Fixture, createFixture, userBuilder } from '@app/iam/__tests__'
 
 describe('Feature: Logout', () => {
     let fixture: Fixture

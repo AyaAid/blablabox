@@ -1,8 +1,8 @@
-import { Controller, Get, Param, Inject } from '@nestjs/common'
-import { ApiTags, ApiCookieAuth } from '@nestjs/swagger'
-import { GetMessagesWithUserParam } from '../params'
 import { AuthUser, User } from '@app/iam'
+import { Controller, Get, Inject, Param } from '@nestjs/common'
+import { ApiCookieAuth, ApiTags } from '@nestjs/swagger'
 import { GetMessagesFromUserQuery } from '../../queries'
+import { GetMessagesWithUserParam } from '../params'
 
 @Controller('messages')
 @ApiTags('Chat')

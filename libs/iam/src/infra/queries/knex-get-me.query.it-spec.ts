@@ -1,8 +1,8 @@
-import knex, { Knex } from 'knex'
-import { knexGetMeQuery } from './knex-get-me.query'
-import { knexConfig } from '@app/shared'
-import { resetDB } from 'test/docker-manager'
 import { UserPm } from '@app/chat/write'
+import { knexConfig } from '@app/shared'
+import knex, { Knex } from 'knex'
+import { resetDB } from 'test/docker-manager'
+import { knexGetMeQuery } from './knex-get-me.query'
 
 const USER_ID = 'c8062fd1-b4b7-49fa-b9a3-c9c9acbf02b2'
 

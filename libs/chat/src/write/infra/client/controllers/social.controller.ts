@@ -1,4 +1,15 @@
 import {
+    UserSocialAlreadyFriendsError,
+    UserSocialAlreadyRequestedError,
+    UserSocialFriendRequestNotFound,
+    UserSocialNotFoundError,
+} from '@app/chat/write/domain'
+import {
+    AcceptFriendRequestHandler,
+    SendFriendRequestHandler,
+} from '@app/chat/write/use-cases'
+import { AuthUser, User } from '@app/iam'
+import {
     BadRequestException,
     Body,
     Controller,
@@ -6,20 +17,9 @@ import {
     Param,
     Post,
 } from '@nestjs/common'
-import { SendFriendRequestBody } from '../body'
-import {
-    AcceptFriendRequestHandler,
-    SendFriendRequestHandler,
-} from '@app/chat/write/use-cases'
-import { SendFriendRequestParams } from '../params'
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
-import { AuthUser, User } from '@app/iam'
-import {
-    UserSocialAlreadyFriendsError,
-    UserSocialAlreadyRequestedError,
-    UserSocialFriendRequestNotFound,
-    UserSocialNotFoundError,
-} from '@app/chat/write/domain'
+import { SendFriendRequestBody } from '../body'
+import { SendFriendRequestParams } from '../params'
 
 @ApiTags('Social')
 @Controller('social')

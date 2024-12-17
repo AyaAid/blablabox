@@ -5,14 +5,14 @@ import {
     NestModule,
     Scope,
 } from '@nestjs/common'
-import { AuthController } from './infra'
-import { IAMUseCaseModule } from './iam-usecase.modules'
-import { IAMDependenciesModule, SessionsStore } from './iam-dependencies.module'
+import { APP_GUARD, Reflector } from '@nestjs/core'
 import * as session from 'express-session'
 import { Store } from 'express-session'
-import { APP_GUARD, Reflector } from '@nestjs/core'
-import { AuthGuard } from './infra/client/guards/auth.guard'
 import { AuthProvider } from './gateways'
+import { IAMDependenciesModule, SessionsStore } from './iam-dependencies.module'
+import { IAMUseCaseModule } from './iam-usecase.modules'
+import { AuthController } from './infra'
+import { AuthGuard } from './infra/client/guards/auth.guard'
 
 @Module({
     imports: [IAMDependenciesModule, IAMUseCaseModule],

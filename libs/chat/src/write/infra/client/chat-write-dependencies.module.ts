@@ -1,12 +1,12 @@
+import { DatabaseModule, SqlConnection } from '@app/shared'
 import { Module } from '@nestjs/common'
+import { Knex } from 'knex'
+import { DateProvider, RealDateProvider } from '../../domain'
 import {
     ChatterRepository,
     MessageRepository,
     UserSocialRepository,
 } from '../../gateways'
-import { DateProvider, RealDateProvider } from '../../domain'
-import { Knex } from 'knex'
-import { DatabaseModule, SqlConnection } from '@app/shared'
 import { KnexChatterRepository, KnexMessageRepository } from '../gateways'
 import { KnexUserSocialRepository } from '../gateways/repositories/knex/knex-user-social.repository'
 

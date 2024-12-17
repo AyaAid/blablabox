@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
-import { ChatController, SocialController } from './controllers'
 import { ChatWriteUsecasesModule } from './chat-write-usecases.module'
+import { ChatController, SocialController } from './controllers'
 
 @Module({
     imports: [ChatWriteUsecasesModule],

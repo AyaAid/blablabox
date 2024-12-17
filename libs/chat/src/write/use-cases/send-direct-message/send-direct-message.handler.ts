@@ -1,11 +1,11 @@
 import { CommandHandler, EventBus } from '@app/shared'
+import { ChatterNotFoundError, DateProvider } from '../../domain'
+import { MessageSentEvent } from '../../domain/message/message.events'
+import { ChatterRepository, MessageRepository } from '../../gateways'
 import {
     SendDirectMessageCommand,
     SendDirectMessagePayload,
 } from './send-direct-message.command'
-import { ChatterRepository, MessageRepository } from '../../gateways'
-import { ChatterNotFoundError, DateProvider } from '../../domain'
-import { MessageSentEvent } from '../../domain/message/message.events'
 
 export class SendDirectMessageHandler
     implements CommandHandler<SendDirectMessageCommand>

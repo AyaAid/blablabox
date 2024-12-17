@@ -1,10 +1,10 @@
 import { CommandHandler } from '@app/shared'
+import { ChatterNotFoundError, MessageNotFoundError } from '../../domain'
+import { ChatterRepository, MessageRepository } from '../../gateways'
 import {
     DeleteDirectMessageCommand,
     DeleteDirectMessagePayload,
 } from './delete-direct-message.command'
-import { ChatterRepository, MessageRepository } from '../../gateways'
-import { ChatterNotFoundError, MessageNotFoundError } from '../../domain'
 
 export class DeleteDirectMessageHandler
     implements CommandHandler<DeleteDirectMessageCommand>

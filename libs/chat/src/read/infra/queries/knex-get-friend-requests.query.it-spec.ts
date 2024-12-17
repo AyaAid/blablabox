@@ -1,8 +1,8 @@
-import knex, { Knex } from 'knex'
-import { KnexGetFriendRequestsQuery } from './knex-get-friend-requests.query'
-import { knexConfig } from '@app/shared'
-import { resetDB } from 'test/docker-manager'
 import { FriendRequestPm } from '@app/chat/write/infra/gateways/repositories/knex/persistence-models/friend-request.pm'
+import { knexConfig } from '@app/shared'
+import knex, { Knex } from 'knex'
+import { resetDB } from 'test/docker-manager'
+import { KnexGetFriendRequestsQuery } from './knex-get-friend-requests.query'
 
 const USER_ID = 'c8062fd1-b4b7-49fa-b9a3-c9c9acbf02b2'
 const USER_ID_2 = '1d902bc3-3e6a-40ba-bf9a-0103a6eb031d'

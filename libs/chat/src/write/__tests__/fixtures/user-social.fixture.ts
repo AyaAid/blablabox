@@ -6,8 +6,8 @@ import {
     SendFriendRequestPaylaod,
 } from '../../use-cases'
 import {
-    AcceptFriendRequestPayload,
     AcceptFriendRequestHandler,
+    AcceptFriendRequestPayload,
 } from '../../use-cases/accept-friend-request'
 
 export const createUserSocialFixture = () => {

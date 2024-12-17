@@ -1,14 +1,14 @@
 import { CommandHandler, EventBus } from '@app/shared'
 import {
-    SendFriendRequestCommand,
-    SendFriendRequestPaylaod,
-} from './send-friend-request.command'
-import {
     DateProvider,
     FriendRequestSentEvent,
     UserSocialNotFoundError,
 } from '../../domain'
 import { UserSocialRepository } from '../../gateways'
+import {
+    SendFriendRequestCommand,
+    SendFriendRequestPaylaod,
+} from './send-friend-request.command'
 
 export class SendFriendRequestHandler
     implements CommandHandler<SendFriendRequestCommand>

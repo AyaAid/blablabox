@@ -1,5 +1,10 @@
+import { DatabaseModule, SqlConnection } from '@app/shared'
 import { Module, Scope } from '@nestjs/common'
-import { AuthProvider, UserRepository } from './gateways'
+import { REQUEST } from '@nestjs/core'
+import RedisStore from 'connect-redis'
+import { Store } from 'express-session'
+import Redis from 'ioredis'
+import { Knex } from 'knex'
 import {
     BcryptPasswordHasher,
     CryptoIdProvider,
@@ -8,15 +13,10 @@ import {
     PasswordHasher,
     RealDateProvider,
 } from './domain'
-import { DatabaseModule, SqlConnection } from '@app/shared'
-import { Knex } from 'knex'
+import { AuthProvider, UserRepository } from './gateways'
 import { KnexUserRepository } from './infra'
-import { redisConfig } from './infra/redis-config'
-import RedisStore from 'connect-redis'
 import { RequestSessionAuthGateway } from './infra/auth-provider/request-session-auth-provider'
-import { Store } from 'express-session'
-import { REQUEST } from '@nestjs/core'
-import Redis from 'ioredis'
+import { redisConfig } from './infra/redis-config'
 
 export const SessionsStore = Symbol('SessionsStore')
 

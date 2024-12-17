@@ -1,7 +1,7 @@
 import { Global, Module } from '@nestjs/common'
-import { NestEventBus } from './nest-event-bus'
 import { EventEmitter2, EventEmitterModule } from '@nestjs/event-emitter'
 import { EventBus } from './event-bus'
+import { NestEventBus } from './nest-event-bus'
 
 @Global()
 @Module({

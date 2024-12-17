@@ -1,11 +1,10 @@
-import { Command } from "@app/shared";
+import { Command } from '@app/shared'
 
 export type SendDirectMessagePayload = {
-    messageId: string;
-    emitterId: string;
-    receiverId: string;
-    content: string;
-};
+    messageId: string
+    emitterId: string
+    receiverId: string
+    content: string
+}
 
-export class SendDirectMessageCommand
-    extends Command<SendDirectMessagePayload> {}
+export class SendDirectMessageCommand extends Command<SendDirectMessagePayload> {}

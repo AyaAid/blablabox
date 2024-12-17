@@ -1,5 +1,5 @@
-import { DomainEvent, EventBus } from './event-bus'
 import { EventEmitter2 } from '@nestjs/event-emitter'
+import { DomainEvent, EventBus } from './event-bus'
 
 export class NestEventBus implements EventBus {
     constructor(private readonly eventBus: EventEmitter2) {}

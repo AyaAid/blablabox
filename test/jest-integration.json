@@ -1,21 +1,14 @@
 {
     "globalSetup": "<rootDir>/test/setup-integration.ts",
     "globalTeardown": "<rootDir>/test/teardown-integration.ts",
-    "moduleFileExtensions": [
-        "js",
-        "json",
-        "ts"
-    ],
+    "moduleFileExtensions": ["js", "json", "ts"],
     "rootDir": "../",
     "testRegex": ".*\\.it.spec\\.ts$",
     "transform": {
         "^.+\\.(t|j)s$": "ts-jest"
     },
     "testEnvironment": "node",
-    "roots": [
-        "<rootDir>/src/",
-        "<rootDir>/libs/"
-    ],
+    "roots": ["<rootDir>/src/", "<rootDir>/libs/"],
     "moduleNameMapper": {
         "^@app/chat(|/.*)$": "<rootDir>/libs/chat/src/$1",
         "^@app/iam(|/.*)$": "<rootDir>/libs/iam/src/$1",

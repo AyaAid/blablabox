@@ -1,7 +1,7 @@
+import { MessageEvent } from '@nestjs/common'
 import { Subject } from 'rxjs'
 import { FriendRequest } from '../../domain'
 import { FriendRequestNotifier } from '../../gateways'
-import { MessageEvent } from '@nestjs/common'
 
 export class SSEFriendRequestNotifier implements FriendRequestNotifier {
     constructor(private subject: Subject<MessageEvent>) {}

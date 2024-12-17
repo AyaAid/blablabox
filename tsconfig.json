@@ -19,33 +19,15 @@
         "noFallthroughCasesInSwitch": false,
         "jsx": "react-jsx",
         "paths": {
-            "@app/shared": [
-                "libs/shared/src"
-            ],
-            "@app/shared/*": [
-                "libs/shared/src/*"
-            ],
-            "@app/iam": [
-                "libs/iam/src"
-            ],
-            "@app/iam/*": [
-                "libs/iam/src/*"
-            ],
-            "@app/chat": [
-                "libs/chat/src"
-            ],
-            "@app/chat/*": [
-                "libs/chat/src/*"
-            ],
-            "test/*": [
-                "test/*"
-            ],
-            "@components/*": [
-                "src/components/*"  
-            ],
-            "@views/*": [
-                "src/views/*"  
-            ]
+            "@app/shared": ["libs/shared/src"],
+            "@app/shared/*": ["libs/shared/src/*"],
+            "@app/iam": ["libs/iam/src"],
+            "@app/iam/*": ["libs/iam/src/*"],
+            "@app/chat": ["libs/chat/src"],
+            "@app/chat/*": ["libs/chat/src/*"],
+            "test/*": ["test/*"],
+            "@components/*": ["src/components/*"],
+            "@views/*": ["src/views/*"]
         }
     }
 }
