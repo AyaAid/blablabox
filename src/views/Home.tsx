@@ -1,7 +1,7 @@
-import List from "../components/list/List";
-import Message from "../components/message/Message";
-import NotificationBar from "../components/notification-bar/NotificationBar";
-import SendBar from "../components/send-bar/SendBar";
+import List from "@components/list/List";
+import Message from "@components/message/Message";
+import NotificationBar from "@components/notification-bar/NotificationBar";
+import SendBar from "@components/send-bar/SendBar";
 import "./Home.css";
 
 const Home = () => {
