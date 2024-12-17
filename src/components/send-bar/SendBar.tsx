@@ -19,7 +19,9 @@ const SendBar = () => {
           onChange={(e) => handleChange(e.target.value)}
           maxLength={maxLength}
         ></input>
-        <p>{nbOfCaract.length}</p>
+        <p>
+          {nbOfCaract.length} / {maxLength}
+        </p>
       </div>
       <button>
         <FontAwesomeIcon icon={faArrowUp} className="sendBar-icon" />
