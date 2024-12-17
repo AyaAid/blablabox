@@ -1,27 +1,59 @@
- 
-.DS_*
-*.log
+# compiled output
+/dist
+/node_modules
+/build
+
+# Logs
 logs
-**/*.backup.*
-**/*.back.*
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
-node_modules
-bower_components
+# OS
+.DS_Store
 
-*.sublime*
+# Tests
+/coverage
+/.nyc_output
 
-psd
-thumb
-sketch
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
+# IDE - VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
 
-# Local History for Visual Studio Code
-.history/
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
-/package-lock.json
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+docker-postgresql-data-for-dev/
+docker-postgresql-data/
