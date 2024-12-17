@@ -11,21 +11,23 @@ const SendBar = () => {
         SetNbOfCaract(value)
     }
 
-    return (
-        <div className="sendBar">
-            <div className="input">
-                <input
-                    placeholder="Écrire un message ..."
-                    onChange={(e) => handleChange(e.target.value)}
-                    maxLength={maxLength}
-                ></input>
-                <p>{nbOfCaract.length}</p>
-            </div>
-            <button>
-                <FontAwesomeIcon icon={faArrowUp} className="sendBar-icon" />
-            </button>
-        </div>
-    )
-}
+  return (
+    <div className="sendBar">
+      <div className="input">
+        <input
+          placeholder="Écrire un message ..."
+          onChange={(e) => handleChange(e.target.value)}
+          maxLength={maxLength}
+        ></input>
+        <p>
+          {nbOfCaract.length} / {maxLength}
+        </p>
+      </div>
+      <button>
+        <FontAwesomeIcon icon={faArrowUp} className="sendBar-icon" />
+      </button>
+    </div>
+  );
+};
 
 export default SendBar
