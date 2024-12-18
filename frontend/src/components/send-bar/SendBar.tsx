@@ -3,13 +3,25 @@ import './SendBar.css'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-const SendBar = () => {
-    const [nbOfCaract, SetNbOfCaract] = useState('0')
-    const maxLength = 500
+interface SendBarProps {
+  onSendMessage: (message: string) => void;
+}
 
-    const handleChange = (value: string) => {
-        SetNbOfCaract(value)
+const SendBar: React.FC<SendBarProps> = ({ onSendMessage }) => {
+  const [message, setMessage] = useState("");
+  const [nbOfCaract, SetNbOfCaract] = useState("0");
+  const maxLength = 500;
+
+  const handleChange = (value: string) => {
+    SetNbOfCaract(value);
+  };
+
+  const handleSend = () => {
+    if (message.trim()) {
+      onSendMessage(message);
+      setMessage("");
     }
+  };
 
   return (
     <div className="sendBar">
@@ -23,7 +35,7 @@ const SendBar = () => {
           {nbOfCaract.length} / {maxLength}
         </p>
       </div>
-      <button>
+      <button onClick={handleSend}>
         <FontAwesomeIcon icon={faArrowUp} className="sendBar-icon" />
       </button>
     </div>

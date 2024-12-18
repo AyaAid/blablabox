@@ -1,17 +1,15 @@
-import "./Message.css";
+import React from "react";
 
 interface MessageProps {
-  message: any; // Définir le type de la prop
+  mind: boolean; 
+  children: React.ReactNode;
 }
 
-const Message: React.FC<MessageProps> = ({ message }) => {
+const Message: React.FC<MessageProps> = ({ mind, children }) => {
   return (
-    <div className={`message-side ${message.mind ? "mind" : ""}`}>
-      <div className="message">
-        <div className={`message-bulle ${message.mind ? "mind" : ""}`}>
-          <p>{message.message}</p>
-        </div>
-        <p>{message.date}</p>
+    <div className={`message-side ${mind ? "mind" : ""}`}>
+      <div className={`message-bulle ${mind ? "mind" : ""}`}>
+        <p>{children}</p>
       </div>
     </div>
   );

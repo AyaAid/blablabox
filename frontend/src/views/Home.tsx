@@ -1,53 +1,29 @@
+import React, { useState } from "react";
 import List from "../components/list/List";
 import Message from "../components/message/Message";
 import NotificationBar from "../components/notification-bar/NotificationBar";
 import SendBar from "../components/send-bar/SendBar";
 import "./Home.css";
 
+interface ChatMessage {
+  fromMe: boolean; 
+  content: string;
+}
+
 const Home = () => {
-  const messages = [
-    {
-      id: "1",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      date: "15 déc 18:58",
-      mind: false,
-    },
-    {
-      id: "2",
-      message: "Lorem ipsum dolor sit m id est laborum.",
-      date: "15 déc 21:58",
-      mind: true,
-    },
-    {
-      id: "3",
-      message:
-        "Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum",
-      date: "16 déc 21:58",
-      mind: true,
-    },
-    {
-      id: "4",
-      message:
-        "Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum sit m id est laborum ",
-      date: "17 déc 21:58",
-      mind: false,
-    },
-    {
-      id: "5",
-      message:
-        "Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum",
-      date: "16 déc 21:58",
-      mind: true,
-    },
-    {
-      id: "6",
-      message:
-        "Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum sit m id est laborum Lorem ipsum dolor sit m id est laborum Lorem ipsum dolor sit m id est laborum",
-      date: "17 déc 21:58",
-      mind: false,
-    },
-  ];
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+
+  const handleSendMessage = (messageContent: string) => {
+    const newMessage: ChatMessage = { fromMe: true, content: messageContent };
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    setTimeout(() => {
+      const autoReply: ChatMessage = {
+        fromMe: false,
+        content: "Réponse automatique : " + messageContent,
+      };
+      setMessages((prevMessages) => [...prevMessages, autoReply]);
+    }, 1000);
+  };
 
   return (
     <div className="page">
@@ -56,11 +32,13 @@ const Home = () => {
         <div className="bg"></div>
         <NotificationBar />
         <div className="messages">
-          {messages.map((message) => (
-            <Message message={message} />
+          {messages.map((message, index) => (
+            <Message key={index} mind={message.fromMe}>
+              {message.content}
+            </Message>
           ))}
         </div>
-        <SendBar />
+        <SendBar onSendMessage={handleSendMessage} />
       </div>
     </div>
   );
