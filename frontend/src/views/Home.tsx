@@ -5,24 +5,18 @@ import NotificationBar from "../components/notification-bar/NotificationBar";
 import SendBar from "../components/send-bar/SendBar";
 import "./Home.css";
 
-interface ChatMessage {
-  fromMe: boolean;
-  content: string;
-}
+type Message = {
+  id: number;
+  message: string;
+  mind: boolean;
+  date: string;
+};
 
 const Home = () => {
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
-  const handleSendMessage = (messageContent: string) => {
-    const newMessage: ChatMessage = { fromMe: true, content: messageContent };
+  const handleSendMessage = (newMessage: Message) => {
     setMessages((prevMessages) => [...prevMessages, newMessage]);
-    setTimeout(() => {
-      const autoReply: ChatMessage = {
-        fromMe: false,
-        content: "Réponse automatique : " + messageContent,
-      };
-      setMessages((prevMessages) => [...prevMessages, autoReply]);
-    }, 1000);
   };
 
   return (
@@ -33,8 +27,8 @@ const Home = () => {
         <NotificationBar />
         <div className="messages">
           {messages.map((message, index) => (
-            <Message key={index} mind={message.fromMe}>
-              {message.content}
+            <Message key={index} mind={message.mind} date={message.date}>
+              {message.message}
             </Message>
           ))}
         </div>

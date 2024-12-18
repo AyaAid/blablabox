@@ -1,25 +1,40 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './SendBar.css'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./SendBar.css";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 interface SendBarProps {
-  onSendMessage: (message: string) => void;
+  onSendMessage: (message: Message) => void;
 }
+
+type Message = {
+  id: number;
+  message: string;
+  mind: boolean;
+  date: string;
+};
 
 const SendBar: React.FC<SendBarProps> = ({ onSendMessage }) => {
   const [message, setMessage] = useState("");
   const [nbOfCaract, SetNbOfCaract] = useState("0");
+  const [mind, setMind] = useState(false);
   const maxLength = 500;
 
   const handleChange = (value: string) => {
+    setMessage(value);
     SetNbOfCaract(value);
   };
 
   const handleSend = () => {
     if (message.trim()) {
-      onSendMessage(message);
-      setMessage("");
+      const newMessage: Message = {
+        id: Date.now(),
+        message: message,
+        mind: true,
+        date: new Date().toISOString(),
+      };
+      console.log(newMessage);
+      onSendMessage(newMessage);
     }
   };
 
@@ -42,4 +57,4 @@ const SendBar: React.FC<SendBarProps> = ({ onSendMessage }) => {
   );
 };
 
-export default SendBar
+export default SendBar;
