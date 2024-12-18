@@ -9,51 +9,56 @@
   justify-content: space-between;
 }
 
-.profil-container {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-    gap: 10px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-    gap: 10px;
-    font-size: 20px;
+.list-container-elements-profil-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  gap: 10px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  gap: 10px;
+  font-size: 20px;
 }
 
-.profil {
-    height: 100px;
-    width: 100px;
-    margin: 0px auto;
-    background-image: url("public/profil.png");
-    background-size: contain;
-    height: 100px;
-    width: 100px;
-    margin: 0px auto;
-    background-image: url("public/profil.png");
-    background-size: contain;
+.list-container-elements-profil-container-profil {
+  height: 100px;
+  width: 100px;
+  margin: 0px auto;
+  background-image: url("public/profil.png");
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  margin: 0px auto;
+  background-image: url("public/profil.png");
+  background-size: contain;
+}
+
+.list-container-elements-profil-container p {
+  color: white;
+  font-size: 18px;
 }
 
 .input {
-    background-color: white;
-    width: 100%;
-    height: 45px;
-    border-radius: 10;
-    color: black;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid white;
-    background-color: white;
-    width: 100%;
-    height: 45px;
-    border-radius: 10;
-    color: black;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid white;
+  background-color: white;
+  width: 100%;
+  height: 45px;
+  border-radius: 10;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: white;
+  width: 100%;
+  height: 45px;
+  border-radius: 10;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid white;
 }
 
 .list-button {
@@ -64,19 +69,19 @@
 }
 
 .list-button p {
-    margin: auto;
-    font-size: 18px;
-    margin: auto;
-    font-size: 18px;
+  margin: auto;
+  font-size: 18px;
+  margin: auto;
+  font-size: 18px;
 }
 
 .list-icon {
-    margin: auto;
-    height: 30px;
-    color: white;
-    margin: auto;
-    height: 30px;
-    color: white;
+  margin: auto;
+  height: 30px;
+  color: white;
+  margin: auto;
+  height: 30px;
+  color: white;
 }
 
 .version {
@@ -104,6 +109,7 @@
 .list-container-hamburger-icon {
   margin: auto;
   height: 90%;
+  color: white;
 }
 
 /* Écran moyen (tablettes) */
@@ -128,10 +134,18 @@
     display: flex;
   }
 
+  .list-container-bottom {
+    display: none;
+  }
+
+  .list-container-bottom.active {
+    display: block;
+  }
+
   .list-container-elements {
     display: none;
   }
   .list-container-elements.active {
-    display: flex;
+    display: block;
   }
 }
