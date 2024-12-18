@@ -1,7 +1,5 @@
 import { useState } from "react";
-import Friend from "./friends/Friend";
 import "./FriendList.css";
-import ButtonAdd from "../button/ButtonAdd";
 import React from "react";
 import ShareOnSocial from "react-share-on-social";
 import { ShareSocial } from "react-share-social";
@@ -27,43 +25,10 @@ const FriendList: React.FC<FriendListProps> = ({ search }) => {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <div>
-      {filteredFriends.length > 0 ? (
-        filteredFriends.map((friend) => (
-          <Friend key={friend.id} name={friend.name} />
-        ))
-      ) : (
-        <p>Aucun ami</p>
-      )}
-
-      <Popup
-        wide
-        trigger={
-          <Button>
-            <FontAwesomeIcon icon={faUserPlus} />
-          </Button>
-        }
-        on="click"
-      >
-        <Grid divided columns="equal">
-          <GridColumn>
-            <ShareSocial
-              url="url_to_share.com"
-              socialTypes={[
-                "facebook",
-                "twitter",
-                "reddit",
-                "linkedin",
-                "whatsapp",
-              ]}
-            />
-          </GridColumn>
-          <GridColumn>
-            <ButtonAdd />
-          </GridColumn>
-        </Grid>
-      </Popup>
-    </div>
+    <ShareSocial
+      url="url_to_share.com"
+      socialTypes={["facebook", "twitter", "reddit", "linkedin", "whatsapp"]}
+    />
   );
 };
 

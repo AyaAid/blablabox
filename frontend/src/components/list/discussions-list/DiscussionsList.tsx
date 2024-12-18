@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Discussion from "./discussion/Discussion";
 import "./DiscussionsList.css";
+import { useNavigate } from "react-router-dom";
 
 interface DiscussionListProps {
   search: string;
@@ -14,6 +15,12 @@ const DiscussionList: React.FC<DiscussionListProps> = ({ search, mode }) => {
     { id: 3, name: "esteban dardillac" },
   ]);
 
+  const navigate = useNavigate();
+
+  const addFriend = () => {
+    navigate("/friends");
+  };
+
   const filteredUsers = users
     .filter((user) => user.name.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -22,7 +29,7 @@ const DiscussionList: React.FC<DiscussionListProps> = ({ search, mode }) => {
     <div className="discussions-list">
       {mode && (
         <div className="addFriend">
-          <button>ajouter un ami</button>
+          <button onClick={addFriend}>ajouter un ami</button>
         </div>
       )}
       {filteredUsers.length > 0 ? (
