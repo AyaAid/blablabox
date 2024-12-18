@@ -8,6 +8,8 @@
 .discussion-left {
     display: flex;
     gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .discussion-left-text {
@@ -32,9 +34,18 @@
     margin: auto 0;
     background-image: url("public/profil.png");
     background-size: contain;
+    height: 35px;
+    width: 35px;
+    margin: auto 0;
+    background-image: url("public/profil.png");
+    background-size: contain;
 }
 
 .discussion-heart {
+    margin: auto 0;
+    height: 20px;
+    width: 20px;
+    color: var(--third-color);
     margin: auto 0;
     height: 20px;
     width: 20px;

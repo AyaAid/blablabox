@@ -15,4 +15,4 @@ const Message: React.FC<MessageProps> = ({ mind, children }) => {
   );
 };
 
-export default Message;
+export default Message
