@@ -3,12 +3,12 @@ import Button from "./button/Button";
 import DiscussionsList from "./discussions-list/DiscussionsList";
 import "./List.css";
 import { faBars, faPowerOff } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const List = () => {
   const [searchValue, setSearchValue] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [buttonMode, setButtonMode] = useState(false);
 
   const handleChange = (value: string) => {
     setSearchValue(value);
@@ -16,6 +16,10 @@ const List = () => {
 
   const openMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleMode = () => {
+    setButtonMode(!buttonMode);
   };
 
   const handleOutsideClick = (event) => {
@@ -35,7 +39,10 @@ const List = () => {
   }, []);
 
   return (
-    <div className={`list-container ${menuOpen ? "active" : ""}`}>
+    <div
+      className={`list-container ${menuOpen ? "active" : ""}`}
+      onClick={(e) => e.stopPropagation()}
+    >
       <div className="list-container-hamburger" onClick={openMenu}>
         <FontAwesomeIcon
           icon={faBars}
@@ -47,14 +54,18 @@ const List = () => {
           <div className="profil"></div>
 
           <p>John Doe</p>
-          <Button />
+          <Button buttonMode={buttonMode} onChangeMode={toggleMode} />
         </div>
         <input
           className="input"
-          placeholder="Rechercher une discussion"
+          placeholder={
+            buttonMode ? "Rechercher un ami" : "Rechercher une discussion"
+          }
           onChange={(e) => handleChange(e.target.value)}
         ></input>
-        <DiscussionsList search={searchValue} />
+        <DiscussionsList search={searchValue} mode={buttonMode} />
+      </div>
+      <div>
         <button className="list-button">
           <FontAwesomeIcon icon={faPowerOff} className="list-icon" />
           <p>Déconnexion</p>

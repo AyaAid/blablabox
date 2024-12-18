@@ -1,6 +1,5 @@
 .discussion {
   height: 50px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -14,12 +13,17 @@
 .discussion-left-text {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.discussion-left-text p {
+  margin: auto 0;
 }
 
 .discussion-left-text-date {
   color: grey;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .discussion-profil {
