@@ -1,42 +1,33 @@
 import { useState } from "react";
+import React from "react";
 
-// Définition du type pour le payload
 export type RegisterPayload = {
   username: string;
   password: string;
 };
 
-// ViewModel pour la gestion du register
 export const useRegisterViewModel = () => {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
 
   const register = async (payload: RegisterPayload) => {
     setLoading(true);
-    setError(null);
-    setSuccess(false);
-
     try {
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
 
-      if (!response.ok) {
-        const errorMessage =
-          (await response.json()).message || "Erreur inconnue";
-        throw new Error(errorMessage);
+      const userExists = existingUsers.some(
+        (user: RegisterPayload) => user.username === payload.username
+      );
+
+      if (userExists) {
+        throw new Error("Ce nom d'utilisateur est déjà pris.");
       }
 
-      setSuccess(true);
-    } catch (err: any) {
-      setError(err.message || "Une erreur est survenue");
+      const updatedUsers = [...existingUsers, payload];
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
     } finally {
       setLoading(false);
     }
   };
 
-  return { register, loading, error, success };
+  return { register, loading };
 };
