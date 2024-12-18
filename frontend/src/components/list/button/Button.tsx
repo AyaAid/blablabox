@@ -1,17 +1,22 @@
 import "./Button.css";
-import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
 
-const Button = () => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/friends");
-  };
-
+const Button = ({ buttonMode, onChangeMode }) => {
   return (
-    <div className="button" onClick={handleClick}>
-      <FontAwesomeIcon icon={faUserGroup} className="button-icon" /> <p>Amis</p>
+    <div className="button" onClick={onChangeMode}>
+      {!buttonMode && (
+        <>
+          <p>Conversations</p>
+          <FontAwesomeIcon icon={faComment} className="button-icon" />
+        </>
+      )}
+      {buttonMode && (
+        <>
+          <p>Amis</p>
+          <FontAwesomeIcon icon={faUserGroup} className="button-icon" />
+        </>
+      )}
     </div>
   );
 };

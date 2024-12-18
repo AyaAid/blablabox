@@ -4,9 +4,10 @@ import "./DiscussionsList.css";
 
 interface DiscussionListProps {
   search: string;
+  mode: boolean;
 }
 
-const DiscussionList: React.FC<DiscussionListProps> = ({ search }) => {
+const DiscussionList: React.FC<DiscussionListProps> = ({ search, mode }) => {
   const [users] = useState([
     { id: 1, name: "john doe" },
     { id: 2, name: "patrick jean" },
@@ -19,9 +20,14 @@ const DiscussionList: React.FC<DiscussionListProps> = ({ search }) => {
 
   return (
     <div className="discussions-list">
+      {mode && (
+        <div className="addFriend">
+          <button>ajouter un ami</button>
+        </div>
+      )}
       {filteredUsers.length > 0 ? (
         filteredUsers.map((user) => (
-          <Discussion key={user.id} name={user.name} />
+          <Discussion key={user.id} name={user.name} mode={mode} />
         ))
       ) : (
         <p>Aucune discussion trouvée</p>
@@ -30,4 +36,4 @@ const DiscussionList: React.FC<DiscussionListProps> = ({ search }) => {
   );
 };
 
-export default DiscussionList
+export default DiscussionList;

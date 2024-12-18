@@ -1,12 +1,13 @@
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './Discussion.css'
+import { faCommentDots, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Discussion.css";
 
 interface DiscussionUserProps {
   name: string;
+  mode: boolean;
 }
 
-const Discussion: React.FC<DiscussionUserProps> = ({ name }) => {
+const Discussion: React.FC<DiscussionUserProps> = ({ name, mode }) => {
   const handleClick = () => {
     console.log("click");
   };
@@ -17,12 +18,18 @@ const Discussion: React.FC<DiscussionUserProps> = ({ name }) => {
         <div className="discussion-profil"></div>
         <div className="discussion-left-text">
           <p>{name}</p>
-          <p className="discussion-left-text-date">il y a 2 heures</p>
+          {!mode && (
+            <p className="discussion-left-text-date">il y a 2 heures</p>
+          )}
         </div>
       </div>
-      <FontAwesomeIcon icon={faHeart} className="discussion-heart" />
+
+      {!mode && <FontAwesomeIcon icon={faHeart} className="discussion-heart" />}
+      {mode && (
+        <FontAwesomeIcon icon={faCommentDots} className="discussion-heart" />
+      )}
     </div>
   );
 };
 
-export default Discussion
+export default Discussion;
