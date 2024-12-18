@@ -1,42 +1,35 @@
 .message-side {
-  width: 100%;
-  display: flex;
-  justify-content: start;
+    width: 100%;
+    display: flex;
+    justify-content: start;
 }
 
 .message-side.mind {
-  justify-content: end;
+    justify-content: end;
 }
 
 .message-bulle.mind {
-  background-color: rgb(149, 149, 149);
+    background-color: rgb(149, 149, 149);
 }
 
 .message {
-  margin: 10px 0;
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: end;
+    margin: 10px 0;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: end;
 }
 
 .message-bulle {
-  z-index: 1;
-  background-color: var(--third-color);
-  flex: 1;
-  border-radius: 30px;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    z-index: 1;
+    background-color: var(--third-color);
+    flex: 1;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px
+        0px 0px 1px;
 
-  padding: 10px;
-  text-align: start;
-}
-
-/* Écran moyen (tablettes) */
-@media (max-width: 768px) {
-  .message {
-    width: 70%;
-  }
+    padding: 10px;
+    text-align: start;
 }

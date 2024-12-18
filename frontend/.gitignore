@@ -59,3 +59,4 @@ docker-postgresql-data-for-dev/
 docker-postgresql-data/
 
 package-lock.json
+./node_modules
