@@ -6,7 +6,7 @@ import SendBar from "../components/send-bar/SendBar";
 import "./Home.css";
 
 interface ChatMessage {
-  fromMe: boolean; 
+  fromMe: boolean;
   content: string;
 }
 
@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div className="page">
       <List />
-      <div className="container">
+      <div className="page-container">
         <div className="bg"></div>
         <NotificationBar />
         <div className="messages">
@@ -44,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home
+export default Home;

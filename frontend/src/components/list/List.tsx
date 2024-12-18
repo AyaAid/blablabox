@@ -50,8 +50,8 @@ const List = () => {
         />
       </div>
       <div className={`list-container-elements ${menuOpen ? "active" : ""}`}>
-        <div className="profil-container">
-          <div className="profil"></div>
+        <div className="list-container-elements-profil-container">
+          <div className="list-container-elements-profil-container-profil"></div>
 
           <p>John Doe</p>
           <Button buttonMode={buttonMode} onChangeMode={toggleMode} />
@@ -65,7 +65,7 @@ const List = () => {
         ></input>
         <DiscussionsList search={searchValue} mode={buttonMode} />
       </div>
-      <div>
+      <div className={`list-container-bottom ${menuOpen ? "active" : ""}`}>
         <button className="list-button">
           <FontAwesomeIcon icon={faPowerOff} className="list-icon" />
           <p>Déconnexion</p>
