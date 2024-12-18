@@ -6,6 +6,7 @@ import React from "react";
 import ShareOnSocial from "react-share-on-social";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { GridColumn, Button, Grid, Popup } from "semantic-ui-react";
 
 interface FriendListProps {
   search: string;
@@ -33,17 +34,35 @@ const FriendList: React.FC<FriendListProps> = ({ search }) => {
       ) : (
         <p>Aucun ami</p>
       )}
-      <ShareOnSocial
-        textToShare="Check out this new wardrobe I just found from IKEA!"
-        link="https://ikea.com/wardrobes/kalle"
-        linkTitle="KALLE Wardorbe which chooses your clothes for you using AI - IKEA"
-        linkMetaDesc="Stop going through the agony of choosing clothes that fit the weather and your mood."
-        noReferer
+
+      <Popup
+        wide
+        trigger={
+          <Button>
+            <FontAwesomeIcon icon={faUserPlus} />
+          </Button>
+        }
+        on="click"
       >
-        <button>
-          <FontAwesomeIcon icon={faUserPlus} /> <p>Amis</p>
-        </button>
-      </ShareOnSocial>
+        <Grid divided columns="equal">
+          <GridColumn>
+            <ShareOnSocial
+              textToShare="Check out this new wardrobe I just found from IKEA!"
+              link="https://ikea.com/wardrobes/kalle"
+              linkTitle="KALLE Wardorbe which chooses your clothes for you using AI - IKEA"
+              linkMetaDesc="Stop going through the agony of choosing clothes that fit the weather and your mood."
+              noReferer
+            >
+              <button>
+                <FontAwesomeIcon icon={faUserPlus} /> <p>Partager un lien </p>
+              </button>
+            </ShareOnSocial>
+          </GridColumn>
+          <GridColumn>
+            <ButtonAdd />
+          </GridColumn>
+        </Grid>
+      </Popup>
     </div>
   );
 };

@@ -29,7 +29,9 @@
         "react-router-dom": "^6.28.0",
         "react-share-on-social": "^1.0.12",
         "reflect-metadata": "^0.2.2",
-        "rxjs": "^7.8.1"
+        "rxjs": "^7.8.1",
+        "semantic-ui-css": "^2.5.0",
+        "semantic-ui-react": "^2.1.5"
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",

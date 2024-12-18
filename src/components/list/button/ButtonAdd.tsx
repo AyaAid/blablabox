@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const ButtonAdd = () => {
   return (
     <div className="button">
-      <FontAwesomeIcon icon={faUserPlus} /> <p>Amis</p>
+      <FontAwesomeIcon icon={faUserPlus} /> <p>Ajouter un ami</p>
     </div>
   );
 };
