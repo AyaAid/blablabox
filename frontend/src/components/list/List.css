@@ -86,6 +86,12 @@
   color: white;
 }
 
+.discussions-list-parent {
+  flex: 1;
+  width: 100%;
+  overflow-y: scroll;
+}
+
 /* Écran moyen (tablettes) */
 @media (max-width: 768px) {
   .list-container {
@@ -120,6 +126,14 @@
     display: none;
   }
   .list-container-elements.active {
+    display: block;
+  }
+
+  .discussions-list-parent {
+    display: none;
+  }
+
+  .discussions-list-parent.active {
     display: block;
   }
 }
