@@ -14,7 +14,7 @@
 
 .message-side-message {
   margin: 10px 0;
-  width: 45%;
+  min-width: 45%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -41,4 +41,19 @@
 .message-side-message-bulle p {
   color: white;
   font-size: 18px;
+}
+
+/* Écran moyen (tablettes) */
+@media (max-width: 768px) {
+  .message-side-message-bulle {
+    padding: 5px 10px;
+  }
+
+  .message-side-message-bulle p {
+    font-size: 14px;
+  }
+
+  .message-side-message {
+    gap: 0px;
+  }
 }

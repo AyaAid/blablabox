@@ -1,4 +1,9 @@
-import { faCommentDots, faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faCommentDots,
+  faHeart,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Discussion.css";
 
@@ -26,7 +31,16 @@ const Discussion: React.FC<DiscussionUserProps> = ({ name, mode }) => {
 
       {!mode && <FontAwesomeIcon icon={faHeart} className="discussion-heart" />}
       {mode && (
-        <FontAwesomeIcon icon={faCommentDots} className="discussion-heart" />
+        <div className="discussion-choices">
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="discussion-choices-xmark"
+          />
+          <FontAwesomeIcon
+            icon={faCheck}
+            className="discussion-choices-check"
+          />
+        </div>
       )}
     </div>
   );
