@@ -64,7 +64,9 @@ const List = () => {
           onChange={(e) => handleChange(e.target.value)}
         ></input>
       </div>
-      {menuOpen && <DiscussionsList search={searchValue} mode={buttonMode} />}
+      <div className={`discussions-list-parent ${menuOpen ? "active" : ""}`}>
+        <DiscussionsList search={searchValue} mode={buttonMode} />
+      </div>
 
       <div className={`list-container-bottom ${menuOpen ? "active" : ""}`}>
         <button className="list-button">
