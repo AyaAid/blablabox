@@ -42,13 +42,23 @@
   background-size: contain;
 }
 
+.discussion-choices {
+  display: flex;
+  gap: 10px;
+}
+
+.discussion-choices-xmark,
+.discussion-choices-check,
 .discussion-heart {
   margin: auto 0;
   height: 20px;
   width: 20px;
-  color: var(--third-color);
-  margin: auto 0;
-  height: 20px;
-  width: 20px;
+}
+
+.discussion-choices-xmark {
+  color: rgb(163, 41, 41);
+}
+.discussion-choices-check,
+.discussion-heart {
   color: var(--third-color);
 }

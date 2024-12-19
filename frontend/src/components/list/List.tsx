@@ -59,12 +59,13 @@ const List = () => {
         <input
           className="input"
           placeholder={
-            buttonMode ? "Rechercher un ami" : "Rechercher une discussion"
+            buttonMode ? "Rechercher une demande" : "Rechercher un ami"
           }
           onChange={(e) => handleChange(e.target.value)}
         ></input>
-        <DiscussionsList search={searchValue} mode={buttonMode} />
       </div>
+      {menuOpen && <DiscussionsList search={searchValue} mode={buttonMode} />}
+
       <div className={`list-container-bottom ${menuOpen ? "active" : ""}`}>
         <button className="list-button">
           <FontAwesomeIcon icon={faPowerOff} className="list-icon" />
